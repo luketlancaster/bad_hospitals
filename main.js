@@ -32,7 +32,7 @@ $(document).ready(function() {
     var hospitalCountDiv = $("#hospitalCount");
 
     hospitalDiv.html('');
-    hospitalCountDiv.html('<h2># of Scary Hospitals: ' + hospitals.length + '<h2>');
+    hospitalCountDiv.html('<h2>There are ' + hospitals.length + ' Scary Hospitals in ' + stateSelect.val() +'<h2>');
     hospitals.forEach(function(hospital) {
       hospitalDiv.append(createTemplate(hospital));
     });
