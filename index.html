@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Bad Hospitals</title>
+      <meta name="description" content="Stay away, unless you wanna pick something up">
+      <link rel="stylesheet" href="node_modules/skeleton-css/css/normalize.css">
+      <link rel="stylesheet" href="node_modules/skeleton-css/css/skeleton.css">
+      <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <h1 class="twelve columns title">Bad Hospitals</h1>
+        </div>
+
+        <form>
+          <div class="row">
+            <div class="six columns">
+              <label for="stateSelect">State Select</label>
+              <select id="stateSelect" class="u-full-width"></select>
+            </div>
+            <div class="six columns">
+              <br>
+              <p>Select a state from the left (or above) to see which Hospitals in that state are getting funding cut due to more Hospital Aquired Infections</p>
+            </div>
+          </div>
+          <button class="button-primary" id="getData" type="button" value="Submit">Submit</button>
+        </form>
+
+        <div class="row" id="hospitals"></div>
+      </div>
+      <script src="node_modules/jquery/dist/jquery.js"></script>
+      <script src="main.js"></script>
+    </body>
+</html>
