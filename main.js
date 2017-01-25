@@ -4,6 +4,7 @@ var states = {"AL":"Alabama","AK":"Alaska","AZ":"Arizona","AR":"Arkansas","CA":"
 
 $(document).ready(function() {
   var stateSelect = $('#stateSelect');
+  var goodOrBadSelect = $('#good_or_bad');
   var button = $('#getData');
 
   for (key in states) {
@@ -17,13 +18,20 @@ $(document).ready(function() {
     event.preventDefault();
 
     var state = stateSelect.val();
+    var goodOrBad = goodOrBadSelect.val();
 
     $.ajax({
       type: "POST",
       url: "index.php",
-      data: {state: state},
-      success: attachHospitals
+      data: {state: state, good_or_bad: goodOrBad},
+      success: newAttach
     });
+  }
+
+  function newAttach(hospitals) {
+    var hospitalDiv = $("#hospitals");
+    hospitalDiv.html('');
+    hospitalDiv.append(hospitals);
   }
 
   function attachHospitals(hospitals) {
